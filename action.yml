@@ -1,0 +1,18 @@
+name: 'Setup Runner'
+description: 'Setup a runner'
+inputs: 
+  repository:
+    description: Runner repository name with owner. For example, actions/runner.
+    default: actions/runner
+  ref:
+    description: The branch, tag or SHA when checking out the runner repository.
+    default: master
+  token:
+    description: Auth token used to configure the runner.
+    required: true
+  name:
+    description: Runer name
+    default: my-runner
+runs:
+  using: node12
+  main: main.js

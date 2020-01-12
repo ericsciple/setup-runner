@@ -4,10 +4,10 @@ const github = require('@actions/github')
 
 async function run() {
   // Inputs
-  const repository = 'actions/runner'
-  const ref = core.getInput('ref') || 'master'
+  const repository = core.getInput('repository', {required: true})
+  const ref = core.getInput('ref', {required: true})
   const token = core.getInput('token', {required: true})
-  const name = core.getInput('name') || 'my-runner'
+  const name = core.getInput('name', {required: true})
 
   // Git clone
   await exec.exec('git', ['clone', `https://github.com/${repository}`])
