@@ -7,6 +7,7 @@ async function run() {
   const repository = 'actions/runner'
   const ref = core.getInput('ref') || 'master'
   const token = core.getInput('token', {required: true})
+  const name = core.getInput('name') || 'my-runner'
 
   // Git clone
   await exec.exec('git', ['clone', `https://github.com/${repository}`])
@@ -32,6 +33,8 @@ async function run() {
     [
       '--unattended',
       '--replace',
+      '--name',
+      name,
       '--url',
       `https://github.com/${github.context.repo.owner}/${github.context.repo.repo}`,
       '--token',
