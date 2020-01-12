@@ -46,3 +46,7 @@ async function run() {
 }
 
 run()
+.catch((err) => {
+  core.error(err.message)
+  process.exitCode = 1
+})
