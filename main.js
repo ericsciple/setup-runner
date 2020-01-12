@@ -18,7 +18,7 @@ async function run() {
   await exec.exec('pwd')
 
   // Git checkout
-  await exec.exec(git, ['checkout', ref])
+  await exec.exec('git', ['checkout', ref])
 
   // Build
   await exec.exec('./dev.sh', ['layout'])
