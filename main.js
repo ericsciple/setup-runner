@@ -42,7 +42,7 @@ async function run() {
     ])
 
   // Run
-  await exec.exec('./config.sh')
+  await exec.exec('./run.sh')
 }
 
 run()
