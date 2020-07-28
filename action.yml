@@ -6,7 +6,7 @@ inputs:
     default: actions/runner
   ref:
     description: The branch, tag or SHA when checking out the runner repository.
-    default: master
+    default: main
   token:
     description: Auth token used to configure the runner.
     required: true
